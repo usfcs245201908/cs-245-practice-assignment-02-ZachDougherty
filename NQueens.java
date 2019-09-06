@@ -24,10 +24,10 @@ public class NQueens {
         for (int i=0; i<this.size; i++) {
             if (this.isValid(row, i)) {
                 this.board[row][i] = 1;
-                //this.printToConsole();
                 if (this.placeQueenRow(row + 1) == true) {
                     return true;
                 }
+                // backtracking
                 this.board[row][i] = 0;
             }
         }
@@ -66,7 +66,7 @@ public class NQueens {
     
     public void printToConsole() {
         int i, j;
-        System.out.println("     ~ The Board ~\t\n");
+        System.out.println("\t ~ The Board ~\t\n");
         for (i=0; i<this.size; i++) {
             System.out.print("\t");
             for (j=0; j<this.size; j++) {
